@@ -75,6 +75,7 @@ void init_mod(){
     sendData("AT+CIPSTA=192.168.0.150\r\n",2000);
     Serial.println("_________________________");*/
     /*algo diferente*/
+    /*comentario escrito por laura*/
     Serial.println("obtener direccion IP"); 
     sendData("AT+CIFSR\r\n",2000); 
     Serial.println("_________________________");
