@@ -139,3 +139,21 @@ void data_server(){
     sendData(cmd_close,3000);
  
 }
+
+/*nuevo codigo añadido por Layra para probar html */
+
+cliente.println("HTTP/1.1 200 OK");
+cliente.println("Content-Type: text/html");
+cliente.println(); //Pagina web en html
+cliente.println("<html>");
+  cliente.println("<head>");
+    cliente.println("<title>JUGANDO CON LED</title>");
+  cliente.println("</head>");
+  cliente.println("<body>");
+    cliente.println("<h1 style="font-family: sans-serif; color:teal;">Juguemos con un Led!</h1>");
+    cliente.println("<h3 style="font-family: sans-serif; color:darkslategray;">Cual es el estado del led?</h3>");
+    cliente.print(state);
+    cliente.println("<input type="submit" value="ON" onclick="location.href" name="" style="border:none; background-color:gold; padding:15px; font-size:16px;">");
+    cliente.println("<input type="submit" value="OFF" onclick="location.href" name="" style="border:none; background-color:black; color:white; padding:15px; font-size:16px;">");
+  cliente.println("</body>");
+cliente.println("</html>");
