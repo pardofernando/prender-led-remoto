@@ -63,17 +63,17 @@ void init_mod(){
     sendData("AT+RST\r\n",2000);
     Serial.println("_________________________");
     Serial.println("Ajustando velocidad del modulo");
-    sendData("AT+CIOBAUD=9600\r\n",1000);
+    sendData("AT+CIOBAUD=9600\r\n",3000);
     Serial.println("_________________________");
     Serial.println("Configurando como cliente");
     sendData("AT+CWMODE=1\r\n",1000);
     Serial.println("_________________________");
     Serial.println("SSID y password para conectarse a red");
     sendData("AT+CWJAP=\""SSID"\",\""PASS"\"\r\n",8000);
+    /*Serial.println("_________________________");
+    Serial.println("forzar dirección IP");
+    sendData("AT+CIPSTA=\"192.168.0.150\"\r\n",1000);*/
     Serial.println("_________________________");
-  /*Serial.println("forzar dirección IP");
-    sendData("AT+CIPSTA=192.168.0.150\r\n",2000);
-    Serial.println("_________________________");*/
     /*algo diferente*/
     /*comentario escrito por laura*/
     Serial.println("obtener direccion IP"); 
