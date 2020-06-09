@@ -140,20 +140,20 @@ void data_server(){
  
 }
 
-/*nuevo codigo añadido por Layra para probar html */
+/*nuevo codigo añadido por Laura para probar html */
 
-cliente.println("HTTP/1.1 200 OK");
-cliente.println("Content-Type: text/html");
-cliente.println(); //Pagina web en html
-cliente.println("<html>");
-  cliente.println("<head>");
-    cliente.println("<title>JUGANDO CON LED</title>");
-  cliente.println("</head>");
-  cliente.println("<body>");
-    cliente.println("<h1 style="font-family: sans-serif; color:teal;">Juguemos con un Led!</h1>");
-    cliente.println("<h3 style="font-family: sans-serif; color:darkslategray;">Cual es el estado del led?</h3>");
-    cliente.print(state);
-    cliente.println("<input type="submit" value="ON" onclick="location.href" name="" style="border:none; background-color:gold; padding:15px; font-size:16px;">");
-    cliente.println("<input type="submit" value="OFF" onclick="location.href" name="" style="border:none; background-color:black; color:white; padding:15px; font-size:16px;">");
-  cliente.println("</body>");
-cliente.println("</html>");
+client.println("HTTP/1.1 200 OK");
+client.println("Content-Type: text/html");
+client.println(); //Pagina web en html
+client.println("<html>");
+  client.println("<head>");
+    client.println("<title>JUGANDO CON LED</title>");
+  client.println("</head>");
+  client.println("<body>");
+    client.println("<h1 style="font-family: sans-serif; color:teal;">Juguemos con un Led!</h1>");
+    client.println("<h3 style="font-family: sans-serif; color:darkslategray;">Cual es el estado del led?</h3>");
+    client.print(state);
+    client.println("<button type="button" style="border:none; background-color:gold; padding:15px; font-size:16px;">encender</button>");
+    client.println("<button type="button" style="border:none; background-color:black; color:white; padding:15px; font-size:16px;">apagar</button>");
+  client.println("</body>");
+client.println("</html>");
