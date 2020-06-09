@@ -65,19 +65,24 @@ void init_mod(){
     Serial.println("Ajustando velocidad del modulo");
     sendData("AT+CIOBAUD=9600\r\n",3000);
     Serial.println("_________________________");
+    Serial.println("Comprobando si adoptó la velocidad");
+    sendData("AT+CIOBAUD?\r\n",1000);             //*******
+    Serial.println("_________________________");
     Serial.println("Configurando como cliente");
     sendData("AT+CWMODE=1\r\n",1000);
     Serial.println("_________________________");
     Serial.println("SSID y password para conectarse a red");
     sendData("AT+CWJAP=\""SSID"\",\""PASS"\"\r\n",8000);
-    /*Serial.println("_________________________");
+    Serial.println("_________________________");
     Serial.println("forzar dirección IP");
-    sendData("AT+CIPSTA=\"192.168.0.150\"\r\n",1000);*/
+    sendData("AT+CIPSTA=\"192.168.0.150\"\r\n",2000);
     Serial.println("_________________________");
     /*algo diferente*/
     /*comentario escrito por laura*/
-    Serial.println("obtener direccion IP"); 
-    sendData("AT+CIFSR\r\n",2000); 
+    /*Serial.println("obtener direccion IP");     
+    sendData("AT+CIFSR\r\n",2000); */        //Eliminada para evitar IP al azar
+    Serial.println("Comprobar IP forzada");
+    sendData("AT+CIPSTA?\r\n",1000);
     Serial.println("_________________________");
     Serial.println("configuramos el servidor en modo multiconexion");
     sendData("AT+CIPMUX=1\r\n",1000);
@@ -108,7 +113,7 @@ void sendData(String comando, const int timeout)  {
  
 void data_server(){
  
-    delay(1000);          // espera que lleguen los datos hacia el buffer
+    delay(2000);    // espera que lleguen los datos hacia el buffer 2000 por 1000
     int conexionID = ESP01.read()-48; // obtener el ID de la conexión para poder responder
     ESP01.find("led=");               // buscar el texto "led="
     int state = (ESP01.read()-48);    // Obtener el estado del pin a mostrar
@@ -154,6 +159,6 @@ cliente.println("<html>");
     cliente.println("<h3 style="font-family: sans-serif; color:darkslategray;">Cual es el estado del led?</h3>");
     cliente.print(state);
     cliente.println("<input type="submit" value="ON" onclick="location.href" name="" style="border:none; background-color:gold; padding:15px; font-size:16px;">");
-    cliente.println("<input type="submit" value="OFF" onclick="location.href" name="" style="border:none; background-color:black; color:white; padding:15px; font-size:16px;">");
-  cliente.println("</body>");
-cliente.println("</html>");
+    client.println("<input type="submit" value="OFF" onclick="location.href" name="" style="border:none; background-color:black; color:white; padding:15px; font-size:16px;">");
+  client.println("</body>");
+client.println("</html>");
