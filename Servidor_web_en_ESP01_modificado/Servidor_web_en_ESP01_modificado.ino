@@ -126,7 +126,7 @@ void data_server(){
     else {html += "<h1>LED_13 = apagado!</h1>";}
       
     String cmd_Webpage = "AT+CIPSEND="; // comando para enviar página web
-    cmd_Webpage += conexionID;
+    cmd_Webpage += conexionID; // esto no es para el modulito simo para la página web y probablemente lo de las siguientes lineas tambien
     cmd_Webpage += ",";
     cmd_Webpage += html.length();
     cmd_Webpage += "\r\n";
