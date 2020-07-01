@@ -9,7 +9,8 @@
 * http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES
 * ##############################################################
 */
- 
+
+ /*comentario de prueba*/
 #include <SoftwareSerial.h>
 const int Rx = 3;   // Pin3 -> RX, conectar con Tx del modulo
 const int Tx = 2;   // Pin2 -> TX, conectar con Rx del modulo
